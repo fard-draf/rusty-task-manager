@@ -41,18 +41,17 @@ impl TaskBase {
                           
 
                           println!("Comment added."); 
-            },
+                        },
 
-            "no"  =>    { println!("No comment added.");
-                          
+            "no"  =>    { println!("No comment added.");      
+                        },
 
-            },
-
-            _     =>    {println!("Failed to read input..")},
+            _     =>    {println!("Failed to read input..");
+                        },
                     
         }
         
-        self.task_vec.push(new_task.clone());    
+        self.task_vec.push(new_task);    
         println!("Task added!");
     }
 }

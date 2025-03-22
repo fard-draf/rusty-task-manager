@@ -9,10 +9,10 @@ mod modify_task;
 
 #[derive(Debug, Clone)]
 pub struct Tasker {
-    description: String,
-    creation_date: DateTime<Local>,
-    comment: String,
-    done: DoneStatus,
+   pub description: String,
+   pub creation_date: DateTime<Local>,
+   pub comment: String,
+   pub done: DoneStatus,
 }
 #[derive(Debug, Clone)]
 pub enum DoneStatus {
@@ -34,6 +34,18 @@ impl Tasker {
             done,
         }
     }
+
+    pub fn change_status(&mut self, input: &str) {
+
+        match input.trim().to_lowercase().as_str() { 
+
+            "yes"   => { self.done = DoneStatus::Yes},
+            "no"    => { self.done = DoneStatus::No},
+            _ => return,   
+            
+        }
+
+    }
 }
 
 
@@ -43,13 +55,15 @@ impl TaskBase {
     }
 
     fn display_menu(&self) {
+        
         println!("----Task Manager----");
-        println!("1 => Add a task");
-        println!("2 => Task list");
-        println!("3 => Modify Task");
-        println!("4 => Remove Task");
-        println!("5 => Quit");
+        println!("1. Add a new task");
+        println!("2. Task's list");
+        println!("3. Modify a task");
+        println!("4. Remove a task");
+        println!("5. Quit the program");
         print!("Choose an option..");
+        
         io::stdout().flush().unwrap();
     }
 
@@ -57,7 +71,9 @@ impl TaskBase {
 
         loop {
             self.display_menu();
+            
             let mut choice = String::new();
+            
             io::stdin().read_line(&mut choice).expect("Reading error..");
            
             match choice.trim() {
@@ -65,7 +81,7 @@ impl TaskBase {
                 "2" => self.task_list(),
                 "3" => self.modify_task(),
                 "4" => self.remove_task(),
-                "5" =>  return,
+                "5" =>  break,
 
                 _ => break,
                 
