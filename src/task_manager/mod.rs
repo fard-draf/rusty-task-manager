@@ -42,7 +42,6 @@ impl TaskBase {
         Self {task_vec: Vec::new()}
     }
 
-
     fn display_menu(&self) {
         println!("----Task Manager----");
         println!("1 => Add a task");
@@ -66,17 +65,11 @@ impl TaskBase {
                 "2" => self.task_list(),
                 "3" => self.modify_task(),
                 "4" => self.remove_task(),
-                "5" =>  println!("{:?}", self.task_vec),
+                "5" =>  return,
 
                 _ => break,
                 
             }
         }
-    }
-
-
-
-    
-
-    
+    } 
 }
