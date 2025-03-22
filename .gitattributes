@@ -1,0 +1,5 @@
+target/* linguist-vendored
+Cargo.lock linguist-vendored
+
+*.ll linguist-generated
+*.bc linguist-generated
