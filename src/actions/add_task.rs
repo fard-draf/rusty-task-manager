@@ -1,12 +1,12 @@
 use std::io::{self};
 use chrono::Local;
 
-use crate::task_manager::{DoneStatus, Tasker};
+use crate::actions::{DoneStatus, Tasker};
 
 
-use super::TaskBase;
+use super::TaskVecBase;
 
-impl TaskBase {
+impl TaskVecBase {
 
     pub fn add_task(&mut self) {
 

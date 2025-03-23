@@ -1,9 +1,9 @@
-use super::TaskBase;
+use super::TaskVecBase;
 use std::io;
 
 
 
-impl TaskBase {
+impl TaskVecBase {
     pub fn modify_task(&mut self) {
             
         for (index,element) in self.task_vec.iter().enumerate() {

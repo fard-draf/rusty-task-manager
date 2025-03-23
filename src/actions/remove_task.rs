@@ -1,8 +1,8 @@
-use super::TaskBase;
+use super::TaskVecBase;
 use std::io::{self};
 
 
-impl TaskBase {
+impl TaskVecBase {
 
     pub fn remove_task(&mut self) {
 

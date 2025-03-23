@@ -20,7 +20,7 @@ pub enum DoneStatus {
     No,    
 }
 
-pub struct TaskBase {
+pub struct TaskVecBase {
     pub task_vec: Vec<Tasker>,
 }
 
@@ -49,7 +49,7 @@ impl Tasker {
 }
 
 
-impl TaskBase {
+impl TaskVecBase {
     pub fn new() -> Self {
         Self {task_vec: Vec::new()}
     }
